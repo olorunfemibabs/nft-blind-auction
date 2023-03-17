@@ -113,7 +113,7 @@ contract NFTAuction is ERC721URIStorage, ReentrancyGuard {
             _transfer(address(this), listing.seller, listing.tokenId);
         }
 
-        listing.status = STATUS_DONE;
+        listing.status = STATUS_CLOSED;
 
         emit AuctionCompleted(listingId, listing.seller, winner, bids[listingId][winner]);
     }
